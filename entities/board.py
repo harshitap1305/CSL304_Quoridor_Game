@@ -4,7 +4,6 @@ from typing import Set, List, Union
 import pygame
 
 from helpers import log
-from network.server import EnhancedServer, Functions
 import config as cfg
 
 from ai.action import ActionMovePawn, ActionPlaceWall
@@ -42,18 +41,6 @@ class Board(Drawable):
         self.board: List[List[Cell]] = []
         self.computing = False  # True if a non-human player is moving
         self._state = None
-
-        # Create NETWORK server
-        try:
-            if cfg.NETWORK_ENABLED:
-                self.server = EnhancedServer(("localhost", cfg.PORT))
-                log('Network server active at TCP PORT ' + str(cfg.PORT))
-                self.server.register_introspection_functions()
-                self.server.register_instance(Functions())
-                self.server.start()
-        except BaseException:
-            log('Could not start network server')
-            self.server = None
 
         for i in range(rows):
             self.board.append([])
