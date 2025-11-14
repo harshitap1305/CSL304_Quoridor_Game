@@ -24,7 +24,7 @@ def dispatch(events, board: Board):
             if event.key == K_ESCAPE or board.finished:
                 return False
 
-        if board.computing or board.finished or board.current_player.is_network_player:
+        if board.computing or board.finished:
             continue
 
         if event.type == MOUSEBUTTONDOWN:

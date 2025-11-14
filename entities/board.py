@@ -404,10 +404,6 @@ class Board(Drawable):
             self.current_player.move_to(action.dest)
             self._state = None
 
-        for pawn in self.pawns:
-            if pawn.is_network_player:
-                pawn.NETWORK.do_action(action)
-
     def computer_move(self):
         """ Performs computer moves for every non-human player
         """

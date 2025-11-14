@@ -2,8 +2,6 @@
 
 import time
 import pygame
-import socket
-import xmlrpc
 from typing import List, Set
 
 import config as cfg
@@ -44,29 +42,6 @@ class Pawn(Drawable):
         self.AI = None
         self.is_network_player = False
         self.percent = None
-
-        if url is not None:
-            log('Connecting to server [%s]' % url)
-            network = None
-            count = 0
-            maxtries = 10
-            while count < maxtries:
-                count += 1
-                try:
-                    network = xmlrpc.client.Server(url, allow_none=True, encoding='utf-8')
-                    log('Pinging server...')
-                    if network.alive():
-                        log('Done!')
-                        break
-                except socket.error:
-                    log('Waiting for server...')
-                    time.sleep(1.5)
-
-            log('Connected!')
-            self.NETWORK = network
-            self.is_network_player = True
-        else:
-            self.NETWORK = None
 
         core.PAWNS += 1
 
