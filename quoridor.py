@@ -109,7 +109,7 @@ def show_welcome_screen(screen: pygame.Surface) -> bool:
     btn_font = pygame.font.Font(None, 28)
 
     title_text = title_font.render("Welcome to Quoridor", True, Color(40, 30, 20))
-    subtitle_text = subtitle_font.render("Classic board — press Start, or any key to begin", True, Color(60, 50, 45))
+    subtitle_text = subtitle_font.render("Classic board — press Start to begin", True, Color(60, 50, 45))
 
     # Compute positions
     title_rect = title_text.get_rect(center=(screen_w // 2, screen_h // 3))
