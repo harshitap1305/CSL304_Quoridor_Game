@@ -31,37 +31,48 @@ DEF_COLS = 9
 NUM_WALLS = 10
 
 ### COLORS ###
-# Font Color & SIZE
-FONT_COLOR = Color(0, 10, 50)
-FONT_BG_COLOR = Color(255, 255, 255)
+### REALISTIC QUORIDOR BOARD THEME ###
+
+# Font
+FONT_COLOR = Color(20, 20, 20)
+FONT_BG_COLOR = Color(245, 245, 245)
 FONT_SIZE = 16
 
-# Board Background and Border color and look
-BOARD_BG_COLOR = Color(240, 255, 255)
-BOARD_BRD_COLOR = Color(0, 0, 40)
-BOARD_BRD_SIZE = 1
+# Board Background & Border
+BOARD_BG_COLOR = Color(205, 170, 125)    # Light wood texture color
+BOARD_BRD_COLOR = Color(130, 100, 70)    # Darker wood edges
+BOARD_BRD_SIZE = 2
 
-# Cell colors
-CELL_BORDER_COLOR = Color(40, 40, 40)
-CELL_COLOR = Color(120, 90, 60)
-CELL_VALID_COLOR = Color(40, 120, 120)  # Cyan
+# Cells (Grid)
+CELL_BORDER_COLOR = Color(110, 80, 55)   # Dark wood lines
+CELL_COLOR = Color(225, 195, 150)        # Smooth wooden cell color
+CELL_VALID_COLOR = Color(180, 150, 100)  # Slightly darker wood for valid tiles
 
-# Wall Color
-WALL_COLOR = Color(10, 10, 10)
+# Walls (Very similar to real Quoridor walls)
+WALL_COLOR = Color(110, 75, 45)          # Dark brown wooden block color
 
-# Pawns color
-PAWN_A_COL = Color(158, 60, 60)  # Red
-PAWN_B_COL = Color(60, 60, 158)  # Blue
-PAWN_BORDER_COL = Color(188, 188, 80)  # Yellow
+# Pawns (Just like real Quoridor sets)
+PAWN_A_COL = Color(180, 30, 30)          # Classic red pawn
+PAWN_B_COL = Color(40, 60, 160)          # Classic blue pawn
+PAWN_BORDER_COL = Color(240, 220, 100)   # Slight gold/beige edge
 
-# Gauge bars
+# Gauges (small wood-tone bars)
 GAUGE_WIDTH = CELL_WIDTH
-GAUGE_HEIGHT = 5
-GAUGE_COLOR = Color(128, 40, 40)
-GAUGE_BORDER_COLOR = Color(0, 0, 0)
+GAUGE_HEIGHT = 6
+GAUGE_COLOR = Color(160, 110, 60)        # Medium brown
+GAUGE_BORDER_COLOR = Color(60, 40, 20)
+
+# Padding
+PAWN_PADDING = 25
+                       # Balanced spacing
+
+
 
 # Other constants
-PAWN_PADDING = 25  # Pixels right to the board
+CELL_GLOW_COLOR = Color(0, 255, 255)
+PAWN_SELECTED_COLOR = Color(255, 0, 255)  # Magenta glow
+WALL_HIGHLIGHT_COLOR = Color(0, 255, 180)
+
 
 
 class DIR:
