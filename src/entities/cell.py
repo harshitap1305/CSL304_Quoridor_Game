@@ -3,7 +3,7 @@
 from typing import List
 import pygame
 
-import config as cfg
+from .. import config as cfg
 from .drawable import Drawable
 from .coord import Coord
 

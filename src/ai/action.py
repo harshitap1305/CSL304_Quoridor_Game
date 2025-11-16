@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from abc import ABC
-from entities.wall import Wall
-from entities.coord import Coord
+from ..entities.wall import Wall
+from ..entities.coord import Coord
 
 
 class Action(ABC):

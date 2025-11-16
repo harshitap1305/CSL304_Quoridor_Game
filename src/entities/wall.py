@@ -4,7 +4,7 @@ import pygame
 
 from .drawable import Drawable
 from .coord import Coord
-from config import DIR, DIRS_DELTA
+from ..config import DIR, DIRS_DELTA
 
 
 class Wall(Drawable):

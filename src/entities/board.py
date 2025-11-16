@@ -3,11 +3,11 @@
 from typing import Set, List, Union
 import pygame
 
-from helpers import log
-import config as cfg
+from ..helpers import log
+from .. import config as cfg
 
-from ai.action import ActionMovePawn, ActionPlaceWall
-from ai.ai import AI
+from ..ai.action import ActionMovePawn, ActionPlaceWall
+from ..ai.ai import AI
 
 from .drawable import Drawable
 from .pawn import Pawn
@@ -15,7 +15,7 @@ from .cell import Cell
 from .wall import Wall
 from .coord import Coord
 
-from config import DIR
+from ..config import DIR
 
 
 class Board(Drawable):

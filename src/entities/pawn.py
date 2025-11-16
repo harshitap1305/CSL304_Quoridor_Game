@@ -4,9 +4,9 @@ import time
 import pygame
 from typing import List, Set
 
-import config as cfg
-import core
-from helpers import log
+from .. import config as cfg
+from .. import core
+from ..helpers import log
 
 from .drawable import Drawable
 from .cell import Cell

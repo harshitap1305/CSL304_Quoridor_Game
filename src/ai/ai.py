@@ -3,14 +3,14 @@
 import re
 from typing import List, Union, Tuple
 
-from helpers import log, LogLevel
-import core
-import config as cfg
-from config import INF
-from cache import PersistentDict
+from ..helpers import log, LogLevel
+from .. import core
+from .. import config as cfg
+from ..config import INF
+from ..cache import PersistentDict
 
-from entities.wall import Wall
-from entities.coord import Coord
+from ..entities.wall import Wall
+from ..entities.coord import Coord
 from .action import Action, ActionPlaceWall, ActionMovePawn
 
 

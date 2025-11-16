@@ -10,11 +10,11 @@ import argparse
 import time
 from typing import Tuple
 
-from helpers import log, LogLevel
-import config as cfg
-import core
+from .helpers import log, LogLevel
+from . import config as cfg
+from . import core
 
-from entities.board import Board
+from .entities.board import Board
 
 
 def dispatch(events, board: Board):

@@ -4,8 +4,8 @@ import re
 from typing import List, Dict, Set, Any
 import pygame
 
-import config as cfg
-from entities.coord import Coord
+from . import config as cfg
+from .entities.coord import Coord
 
 # Core (shared) data. Must be initialized invoking init()
 # This global counter counts the total number of players instantiated (Pawns)
