@@ -1,6 +1,3 @@
-#!/bin/env python
-# -*- coding: utf-8 -*-
-
 import os
 import pygame
 from pygame.locals import *
@@ -40,7 +37,7 @@ def dispatch(events, board: Board):
     return True
 
 
-# ----------------------- Welcome / UI helpers ----------------------- #
+# ----------------------- Welcome / UI  ----------------------- #
 def draw_rounded_button(surface: pygame.Surface,
                         rect: pygame.Rect,
                         text: str,

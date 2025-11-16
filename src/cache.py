@@ -1,8 +1,3 @@
-#! -*- coding: utf-8 -*-
-
-# Taken from https://code.activestate.com/recipes/576642/
-
-
 import csv
 import json
 import os

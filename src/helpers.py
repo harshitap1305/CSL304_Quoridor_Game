@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 class LogLevel:
     DEBUG = 0
     INFO = 1
