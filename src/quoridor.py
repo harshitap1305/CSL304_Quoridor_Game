@@ -7,11 +7,11 @@ import argparse
 import time
 from typing import Tuple
 
-from .helpers import log, LogLevel
+from .logger import log, LogLevel
 from . import config as cfg
 from . import core
 
-from .entities.board import Board
+from .components.board import Board
 
 
 def dispatch(events, board: Board):

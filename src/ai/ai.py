@@ -1,14 +1,14 @@
 import re
 from typing import List, Union, Tuple
 
-from ..helpers import log, LogLevel
+from ..logger import log, LogLevel
 from .. import core
 from .. import config as cfg
 from ..config import INF
 from ..cache import PersistentDict
 
-from ..entities.wall import Wall
-from ..entities.coord import Coord
+from ..components.wall import Wall
+from ..components.coord import Coord
 from .action import Action, ActionPlaceWall, ActionMovePawn
 
 

@@ -1,7 +1,7 @@
 from typing import Set, List, Union
 import pygame
 
-from ..helpers import log
+from ..logger import log
 from .. import config as cfg
 
 from ..ai.action import ActionMovePawn, ActionPlaceWall

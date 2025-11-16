@@ -1,7 +1,7 @@
 import os
 from pygame import Color
 
-from .entities.coord import Coord
+from .components.coord import Coord
 
 __doc__ = """ Centralizes all global configuration flags """
 

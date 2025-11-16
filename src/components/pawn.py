@@ -4,7 +4,7 @@ from typing import List, Set
 
 from .. import config as cfg
 from .. import core
-from ..helpers import log
+from ..logger import log
 
 from .drawable import Drawable
 from .cell import Cell

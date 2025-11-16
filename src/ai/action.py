@@ -1,6 +1,6 @@
 from abc import ABC
-from ..entities.wall import Wall
-from ..entities.coord import Coord
+from ..components.wall import Wall
+from ..components.coord import Coord
 
 
 class Action(ABC):
