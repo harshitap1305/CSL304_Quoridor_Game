@@ -64,13 +64,13 @@ Quoridor is a strategy board game where two players compete to be the first to r
 
 Run the game with default settings: **Make sure to run this command from the root directory.**
 ```bash
-python -m src.quoridor
+python -m src.main
 ```
 
 ### Command-Line Options
 
 ```bash
-python -m src.quoridor [OPTIONS]
+python -m src.main [OPTIONS]
 ```
 
 **Available Options:**
@@ -78,29 +78,29 @@ python -m src.quoridor [OPTIONS]
 - `-l, --level LEVEL`: Set AI difficulty level (default: 0)
   - Level 0: Easy (greedy heuristic)
   - Level 1+: Harder (minimax with increasing depth)
-  - Example: `python -m src.quoridor -l 2`
+  - Example: `python -m src.main -l 2`
 
 - `-d, --debug`: Enable debug mode
   - Shows distance calculations on the board
   - Displays detailed AI thinking process
-  - Example: `python -m src.quoridor -d`
+  - Example: `python -m src.main -d`
 
 - `-C, --cache`: Enable persistent memoization cache
   - Speeds up AI calculations by caching game states
   - Creates a `__cache` directory for storage
-  - Example: `python -m src.quoridor -C`
+  - Example: `python -m src.main -C`
 
 **Examples:**
 
 ```bash
 # Play against easy AI
-python -m src.quoridor
+python -m src.main
 
 # Play against hard AI with caching enabled
-python -m src.quoridor -l 3 -C
+python -m src.main -l 3 -C
 
 # Debug mode to see AI calculations
-python -m src.quoridor -d -l 2
+python -m src.main -d -l 2
 ```
 
 ### Gameplay Controls
@@ -187,7 +187,7 @@ Directory structure:
         ├── config.py           # Configuration constants and settings
         ├── core.py             # Core game logic and distance calculations
         ├── logger.py          # Logging utilities
-        ├── quoridor.py         # Main entry point
+        ├── main.py         # Main entry point
         ├── ai/                 # AI implementation
         │   ├── __init__.py
         │   ├── action.py       # Action classes (MovePawn, PlaceWall)
@@ -204,7 +204,7 @@ Directory structure:
 
 ### Key Components
 
-- **`src/quoridor.py`**: Main game loop, event handling, Pygame initialization
+- **`src/main.py`**: Main game loop, event handling, Pygame initialization
 - **`src/core.py`**: Distance calculations, memoization, game state management
 - **`src/ai/ai.py`**: Minimax algorithm, action evaluation, move selection
 - **`src/components/board.py`**: Board state, wall validation, player switching
