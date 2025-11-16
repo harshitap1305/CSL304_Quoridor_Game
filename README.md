@@ -62,15 +62,15 @@ Quoridor is a strategy board game where two players compete to be the first to r
 
 ### Basic Usage
 
-Run the game with default settings:
+Run the game with default settings: **Make sure to run this command from the root directory.**
 ```bash
-python quoridor.py
+python -m src.quoridor
 ```
 
 ### Command-Line Options
 
 ```bash
-python quoridor.py [OPTIONS]
+python -m src.quoridor [OPTIONS]
 ```
 
 **Available Options:**
@@ -78,29 +78,29 @@ python quoridor.py [OPTIONS]
 - `-l, --level LEVEL`: Set AI difficulty level (default: 0)
   - Level 0: Easy (greedy heuristic)
   - Level 1+: Harder (minimax with increasing depth)
-  - Example: `python quoridor.py -l 2`
+  - Example: `python -m src.quoridor -l 2`
 
 - `-d, --debug`: Enable debug mode
   - Shows distance calculations on the board
   - Displays detailed AI thinking process
-  - Example: `python quoridor.py -d`
+  - Example: `python -m src.quoridor -d`
 
 - `-C, --cache`: Enable persistent memoization cache
   - Speeds up AI calculations by caching game states
   - Creates a `__cache` directory for storage
-  - Example: `python quoridor.py -C`
+  - Example: `python -m src.quoridor -C`
 
 **Examples:**
 
 ```bash
 # Play against easy AI
-python quoridor.py
+python -m src.quoridor
 
 # Play against hard AI with caching enabled
-python quoridor.py -l 3 -C
+python -m src.quoridor -l 3 -C
 
 # Debug mode to see AI calculations
-python quoridor.py -d -l 2
+python -m src.quoridor -d -l 2
 ```
 
 ### Gameplay Controls
@@ -175,40 +175,44 @@ The AI uses a **minimax algorithm with alpha-beta pruning** to determine optimal
 ## Project Structure
 
 ```
-AI_Project/
-├── quoridor.py          # Main entry point
-├── core.py              # Core game logic and distance calculations
-├── config.py            # Configuration constants and settings
-├── cache.py             # Persistent dictionary implementation
-├── helpers.py           # Logging utilities
-├── requirements.txt     # Python dependencies
-│
-├── ai/                  # AI implementation
-│   ├── __init__.py
-│   ├── ai.py           # Main AI class with minimax algorithm
-│   └── action.py       # Action classes (MovePawn, PlaceWall)
-│
-└── entities/            # Game entities
-    ├── __init__.py
-    ├── board.py        # Game board and state management
-    ├── pawn.py         # Player pawn logic and movement
-    ├── cell.py         # Individual cell representation
-    ├── wall.py         # Wall placement and collision
-    ├── coord.py        # Coordinate system
-    └── drawable.py     # Base class for drawable objects
+Directory structure:
+└── AI_Project/
+    ├── README.md
+    ├── requirements.txt       # Python dependencies
+    ├── sound/
+    │   └── chime.ogg
+    └── src/
+        ├── __init__.py
+        ├── cache.py            # Persistent dictionary implementation
+        ├── config.py           # Configuration constants and settings
+        ├── core.py             # Core game logic and distance calculations
+        ├── helpers.py          # Logging utilities
+        ├── quoridor.py         # Main entry point
+        ├── ai/                 # AI implementation
+        │   ├── __init__.py
+        │   ├── action.py       # Action classes (MovePawn, PlaceWall)
+        │   └── ai.py           # Main AI class with minimax algorithm
+        └── entities/           # Game entities
+            ├── __init__.py
+            ├── board.py        # Game board and state management
+            ├── cell.py         # Individual cell representation
+            ├── coord.py        # Coordinate system
+            ├── drawable.py     # Base class for drawable objects
+            ├── pawn.py         # Player pawn logic and movement
+            └── wall.py         # Wall placement and collision
 ```
 
 ### Key Components
 
-- **`quoridor.py`**: Main game loop, event handling, Pygame initialization
-- **`core.py`**: Distance calculations, memoization, game state management
-- **`ai/ai.py`**: Minimax algorithm, action evaluation, move selection
-- **`entities/board.py`**: Board state, wall validation, player switching
-- **`entities/pawn.py`**: Pawn movement, valid moves, goal checking
+- **`src/quoridor.py`**: Main game loop, event handling, Pygame initialization
+- **`src/core.py`**: Distance calculations, memoization, game state management
+- **`src/ai/ai.py`**: Minimax algorithm, action evaluation, move selection
+- **`src/entities/board.py`**: Board state, wall validation, player switching
+- **`src/entities/pawn.py`**: Pawn movement, valid moves, goal checking
 
 ## Configuration
 
-Configuration options are defined in `config.py`. Key settings include:
+Configuration options are defined in `src/config.py`. Key settings include:
 
 ### Game Settings
 - `DEF_ROWS`, `DEF_COLS`: Board dimensions (default: 9×9)
