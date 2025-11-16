@@ -186,13 +186,13 @@ Directory structure:
         ├── cache.py            # Persistent dictionary implementation
         ├── config.py           # Configuration constants and settings
         ├── core.py             # Core game logic and distance calculations
-        ├── helpers.py          # Logging utilities
+        ├── logger.py          # Logging utilities
         ├── quoridor.py         # Main entry point
         ├── ai/                 # AI implementation
         │   ├── __init__.py
         │   ├── action.py       # Action classes (MovePawn, PlaceWall)
         │   └── ai.py           # Main AI class with minimax algorithm
-        └── entities/           # Game entities
+        └── componenets/           # Game entities
             ├── __init__.py
             ├── board.py        # Game board and state management
             ├── cell.py         # Individual cell representation
@@ -207,8 +207,8 @@ Directory structure:
 - **`src/quoridor.py`**: Main game loop, event handling, Pygame initialization
 - **`src/core.py`**: Distance calculations, memoization, game state management
 - **`src/ai/ai.py`**: Minimax algorithm, action evaluation, move selection
-- **`src/entities/board.py`**: Board state, wall validation, player switching
-- **`src/entities/pawn.py`**: Pawn movement, valid moves, goal checking
+- **`src/components/board.py`**: Board state, wall validation, player switching
+- **`src/components/pawn.py`**: Pawn movement, valid moves, goal checking
 
 ## Configuration
 
