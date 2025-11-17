@@ -127,14 +127,11 @@ def show_welcome_screen(screen: pygame.Surface) -> bool:
     exit_hover = Color(205, 110, 100)
     border = Color(80, 60, 50)
     text_col = Color(255, 255, 255)
-
-    # Fade-in effect for title and subtitle
-    # We'll blit the previously drawn gradient background then fade-in title/subtitle
-    screen.blit(title_text, title_rect)  # draw once to position
+    
+    screen.blit(title_text, title_rect)  
     screen.blit(subtitle_text, subtitle_rect)
     pygame.display.update()
 
-    # Instead of pixel-by-pixel fade, do a short alpha ramp for title+subtitle
     title_surf = title_text.convert_alpha()
     subtitle_surf = subtitle_text.convert_alpha()
     clock = pygame.time.Clock()
@@ -145,14 +142,14 @@ def show_welcome_screen(screen: pygame.Surface) -> bool:
         alpha = min(255, int(255 * (t / duration)))
         title_surf.set_alpha(alpha)
         subtitle_surf.set_alpha(alpha)
-        # redraw gradient background
+        
         for y in range(screen_h):
             lerp = y / float(screen_h - 1)
             r = int(top_color.r * (1 - lerp) + bottom_color.r * lerp)
             g = int(top_color.g * (1 - lerp) + bottom_color.g * lerp)
             b = int(top_color.b * (1 - lerp) + bottom_color.b * lerp)
             pygame.draw.line(screen, (r, g, b), (0, y), (screen_w, y))
-        # blit faded texts
+        
         screen.blit(title_surf, title_rect)
         screen.blit(subtitle_surf, subtitle_rect)
         pygame.display.update()
@@ -170,7 +167,7 @@ def show_welcome_screen(screen: pygame.Surface) -> bool:
     while running:
         clock.tick(cfg.FRAMERATE)
 
-        # Redraw background + texts
+        
         for y in range(screen_h):
             lerp = y / float(screen_h - 1)
             r = int(top_color.r * (1 - lerp) + bottom_color.r * lerp)
